@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  postgres:
+    image: postgres:13-alpine
+    container_name: docker-postgresql
+    environment:
+      TZ: Asia/Seoul
+      POSTGRES_USER: pgadmin
+      POSTGRES_PASSWORD: pg1234!@
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - /Users/sanguk/images/postgres/db/initdb.d:/docker-entrypoint-initdb.d:ro
+      - /Users/sanguk/images/postgres/db_data:/var/lib/postgresql/data
