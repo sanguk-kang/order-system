@@ -5,6 +5,7 @@ import com.order.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,7 +16,7 @@ public class TestController {
     @Autowired
     TestService testService;
 
-    @RequestMapping("/sample")
+    @RequestMapping(method = RequestMethod.GET, path = "/sample")
     public RequestTest getTest() {
         return testService.getTest();
     }

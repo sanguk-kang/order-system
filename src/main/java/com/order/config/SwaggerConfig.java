@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("localhost"))
+                .apis(RequestHandlerSelectors.basePackage("com.order"))
                 .paths(PathSelectors.any())
                 .build();
     }

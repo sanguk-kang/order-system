@@ -1,12 +1,11 @@
 package com.order.model.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "tb_user")
 public class User {
@@ -15,4 +14,12 @@ public class User {
     private Long id;
 
     private String userId;
+    private String userName;
+    private String phoneNumber;
+    private String birthDay;
+    private String email;
+
+    private Date createDate;
+    private Date updateDate;
+
 }
