@@ -2,3 +2,16 @@
 /.gradle/
 /build/
 /build/classes/java/main/
+
+# idea
+.idea
+*.iml
+out
+
+# logs
+logs
+
+# mac
+.DS_Store
+
+
