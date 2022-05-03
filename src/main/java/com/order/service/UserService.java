@@ -3,6 +3,7 @@ package com.order.service;
 import com.order.model.dto.UserDto;
 import com.order.model.entity.UserInfo;
 import com.order.repository.UserInfoRepository;
+import com.order.utils.Validations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,10 @@ public class UserService {
      * @return
      */
     public UserInfo signup(UserDto userDto) {
+        System.out.println(">>>>> signup");
         UserInfo userInfo = new UserInfo();
+
+//        Validations.checkStrLength(5, 10, userDto.getUserId());
 
         BeanUtils.copyProperties(userDto, userInfo);
         LocalDateTime currentDat = LocalDateTime.now();
